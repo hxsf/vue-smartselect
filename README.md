@@ -4,7 +4,7 @@
 
 ## ScreenShot
 
-![ScreenShot_01](https://raw.githubusercontent.com/hxsf/vue-smartselect/master/screenshot/screenshot_01.gif)
+![ScreenShot_01](https://raw.githubusercontent.com/hxsf/vue-smartselect/master/screenshots/screenshot_01.gif)
 
 ## Usage
 
