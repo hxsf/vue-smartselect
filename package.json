@@ -3,7 +3,6 @@
   "description": "a smart select",
   "version": "1.0.0",
   "author": "hxsf <hxsf@vip.qq.com>",
-  "private": true,
   "main": "dist/build.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
