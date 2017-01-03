@@ -6,7 +6,7 @@
         <li><input class="auto-select-hint" type="text"
           :style="hint_width"
           @focus="editing = true"
-          @blur="editing = false"
+          @blur="editing == false"
           @keydown.delete="remove_hint"
           @keydown.up.prevent="hint_up"
           @keydown.down.prevent="hint_down"
@@ -23,6 +23,7 @@
 </template>
 <script>
   export default {
+    name: 'smart-select',
     data () {
       return {
         hint: '',
@@ -142,7 +143,7 @@
     max-width: 300px;
   }
   .auto-select-show {
-    min-height: 2.4rem;
+    min-height: 2rem;
     background-color: #fff;
     outline: 1px #000 solid;
     cursor: text;
@@ -153,11 +154,12 @@
   .auto-select-show li{
     float: left;
     max-width: 100%;
+    margin: 3px 2px 0;
   }
   .auto-select-show .auto-select-hint {
     border: 0;
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     max-width: 100%;
   }
   .auto-select-show .auto-select-hint:focus {
@@ -166,20 +168,25 @@
   }
   .auto-select-selecteds {
     display: inline-block;
+    box-sizing: border-box;
+    min-height: 2rem;
     width: 100%;
     margin: 0;
-    padding: 2px;
+    padding: 4px 4px 0 4px;
     list-style-type: none;
   }
   .auto-select-selecteds .auto-select-item-selected {
-    height: 1.8rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
     padding: 0 7px;
     background-color: #0df;
     border-radius: 5px;
     margin: 3px 2px;
+    user-select: none;
   }
   .auto-select-list {
     width: 100%;
+    margin: 0;
     padding: 0;
     top: 2px;
     position: relative;
@@ -190,10 +197,18 @@
     overflow-y: auto;
   }
   .auto-select-item {
+    display: list-item;
+    box-sizing: border-box;
     padding-left: 2rem;
     height: 2rem;
     font-size: 1.4rem;
     line-height: 2rem;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .auto-select-item.active {
     background-color: #0df;
